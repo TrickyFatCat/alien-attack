@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://dxs081h8dgpet"]
+[gd_scene load_steps=2 format=3 uid="uid://dxs081h8dgpet"]
+
+[ext_resource type="Texture2D" uid="uid://c05qh2nocg57r" path="res://assets/sprites/sprite_background.png" id="1_r0r0j"]
 
 [node name="MainLevel" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r0r0j")
+stretch_mode = 6
+flip_v = true
+metadata/_edit_use_anchors_ = true

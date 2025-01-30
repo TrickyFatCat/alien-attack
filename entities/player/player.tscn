@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brfnp5ke4vm1k"]
+
+[ext_resource type="SpriteFrames" uid="uid://blvyfre6d4a68" path="res://assets/animations/animation_player.tres" id="1_sqmr0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_felh0"]
+radius = 15.0
+height = 72.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_sqmr0")
+autoplay = "default"
+frame_progress = 0.631069
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_felh0")

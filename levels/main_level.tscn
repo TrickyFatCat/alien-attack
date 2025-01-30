@@ -1,11 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxs081h8dgpet"]
+[gd_scene load_steps=3 format=3 uid="uid://dxs081h8dgpet"]
 
 [ext_resource type="Texture2D" uid="uid://c05qh2nocg57r" path="res://assets/sprites/sprite_background.png" id="1_r0r0j"]
+[ext_resource type="PackedScene" uid="uid://brfnp5ke4vm1k" path="res://entities/player/player.tscn" id="2_jakpt"]
 
 [node name="MainLevel" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+layer = -1
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -16,3 +17,8 @@ grow_vertical = 2
 texture = ExtResource("1_r0r0j")
 expand_mode = 3
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_jakpt")]
+z_index = 1
+position = Vector2(384, 1152)

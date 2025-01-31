@@ -7,6 +7,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
+follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -20,5 +21,4 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_jakpt")]
-z_index = 1
-position = Vector2(384, 1152)
+position = Vector2(360, 1100)

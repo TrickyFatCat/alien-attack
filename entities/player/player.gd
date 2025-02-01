@@ -8,6 +8,7 @@ var _clamp_pos_v: Vector2 = Vector2.ZERO
 
 @onready var animation_controller: PlayerAnimaitonController = %Body as PlayerAnimaitonController
 @onready var movement_node: MovementNode = %MovementNode
+@onready var weapon: Weapon = %Weapon
 
 
 func _ready() -> void:
@@ -36,6 +37,9 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 			animation_controller.play_move_animation()
 		else:
 			animation_controller.play_stop_animation()
+
+	if Input.is_action_just_pressed("shoot") && weapon != null:
+		weapon.shoot()
 
 
 func _clamp_position() -> void:

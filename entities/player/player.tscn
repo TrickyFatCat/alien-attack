@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brfnp5ke4vm1k"]
+[gd_scene load_steps=18 format=3 uid="uid://brfnp5ke4vm1k"]
 
 [ext_resource type="SpriteFrames" uid="uid://blvyfre6d4a68" path="res://assets/animations/animation_player.tres" id="1_sqmr0"]
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ykhfs"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://src/player_animation_controller.gd" id="3_3nift"]
 [ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="3_gukxv"]
 [ext_resource type="Texture2D" uid="uid://c0v6urt3mm4da" path="res://assets/sprites/sprites_exhaust.png" id="4_cwn07"]
+[ext_resource type="Script" path="res://src/weapon/weapon.gd" id="7_a3u28"]
+[ext_resource type="PackedScene" uid="uid://uo02en2275hb" path="res://entities/projectiles/projectile_player.tscn" id="8_6f17y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jknea"]
 atlas = ExtResource("4_cwn07")
@@ -88,3 +90,10 @@ shape = SubResource("CapsuleShape2D_felh0")
 unique_name_in_owner = true
 script = ExtResource("2_aoths")
 movement_data = SubResource("Resource_h8vgd")
+
+[node name="Weapon" type="Node2D" parent="."]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(0, -68)
+script = ExtResource("7_a3u28")
+projectile_scene = ExtResource("8_6f17y")

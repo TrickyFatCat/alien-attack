@@ -28,7 +28,7 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 	direction = direction.normalized()
 
 	if movement_node != null:
-		movement_node.apply_movement(direction)
+		movement_node.set_momevemnt_direction(direction)
 
 	if animation_controller != null:
 		if direction.x != 0:

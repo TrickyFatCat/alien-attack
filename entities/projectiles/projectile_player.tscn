@@ -13,7 +13,7 @@ height = 50.0
 
 [sub_resource type="Resource" id="Resource_bosmw"]
 script = ExtResource("3_m2tme")
-max_speed = 600.0
+max_speed = 800.0
 
 [node name="PlayerPorjectile" instance=ExtResource("1_8gqrk")]
 

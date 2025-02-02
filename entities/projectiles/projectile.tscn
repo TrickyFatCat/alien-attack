@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtarjg1jqn5eu"]
+[gd_scene load_steps=9 format=3 uid="uid://dtarjg1jqn5eu"]
 
 [ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_b6wtw"]
 [ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="1_toynq"]
 [ext_resource type="Texture2D" uid="uid://bg8lg4unesnra" path="res://assets/sprites/atlas_projectiles.tres" id="2_0fia6"]
 [ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="4_fbjy6"]
+[ext_resource type="Script" path="res://src/off_screen_destroyer.gd" id="5_k2q1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w1r3"]
 atlas = ExtResource("2_0fia6")
@@ -14,6 +15,7 @@ region = Rect2(0, 0, 64, 64)
 [sub_resource type="Resource" id="Resource_rcvhy"]
 script = ExtResource("4_fbjy6")
 max_speed = 100.0
+direction = 2
 
 [node name="Projectile" type="Area2D"]
 process_mode = 1
@@ -33,6 +35,6 @@ script = ExtResource("1_toynq")
 movement_data = SubResource("Resource_rcvhy")
 
 [node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(1, 2.8)
+script = ExtResource("5_k2q1e")

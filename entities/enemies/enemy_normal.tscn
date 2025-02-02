@@ -27,7 +27,6 @@ hitpoints = SubResource("Resource_by5hd")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-z_index = -1
 sprite_frames = ExtResource("3_05tjc")
 animation = &"idle"
 autoplay = "idle"

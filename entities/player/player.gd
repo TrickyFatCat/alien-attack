@@ -3,7 +3,7 @@ extends Area2D
 
 const POS_OFFSET: Vector2 = Vector2(64, 64)
 
-@export var hit_points: HitPoints = null
+@export var hitpoints: HitPoints = null
 
 var _clamp_pos_h: Vector2 = Vector2.ZERO
 var _clamp_pos_v: Vector2 = Vector2.ZERO
@@ -20,8 +20,8 @@ func _ready() -> void:
 	_clamp_pos_v.x = POS_OFFSET.y
 	_clamp_pos_v.y = viewport_size.y - POS_OFFSET.y
 
-	if hit_points != null:
-		set_meta("HitPoints", hit_points)
+	if hitpoints != null:
+		Utils.register_hitpoints(self, hitpoints)
 
 
 func _process(_delta: float) -> void:

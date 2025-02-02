@@ -1,5 +1,5 @@
 class_name Projectile
-extends CharacterBody2D
+extends Area2D
 
 enum MovementDirection { UP, DOWN }
 

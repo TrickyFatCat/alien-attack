@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://uo02en2275hb"]
+[gd_scene load_steps=8 format=3 uid="uid://uo02en2275hb"]
 
 [ext_resource type="PackedScene" uid="uid://dtarjg1jqn5eu" path="res://entities/projectiles/projectile.tscn" id="1_8gqrk"]
 [ext_resource type="Texture2D" uid="uid://bg8lg4unesnra" path="res://assets/sprites/atlas_projectiles.tres" id="2_eep7p"]
@@ -15,7 +15,10 @@ height = 50.0
 script = ExtResource("3_m2tme")
 max_speed = 800.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_40xkx"]
+
 [node name="PlayerPorjectile" instance=ExtResource("1_8gqrk")]
+collision_mask = 2
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_ie63v")
@@ -25,3 +28,7 @@ shape = SubResource("CapsuleShape2D_6rvm4")
 
 [node name="MovementNode" parent="." index="2"]
 movement_data = SubResource("Resource_bosmw")
+
+[node name="DamageShape" parent="." index="4"]
+position = Vector2(0, -19)
+shape = SubResource("CircleShape2D_40xkx")

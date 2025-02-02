@@ -1,0 +1,60 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2ambp1g8popp"]
+
+[ext_resource type="Texture2D" uid="uid://b0jvlqbhur484" path="res://assets/sprites/sprites_enemy_01.png" id="1_1qq8c"]
+[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_yg86m"]
+[ext_resource type="Script" path="res://src/hitpoints.gd" id="2_1gskg"]
+[ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="2_5ptpb"]
+[ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="3_38fgh"]
+[ext_resource type="Script" path="res://src/off_screen_destroyer.gd" id="5_4bykn"]
+
+[sub_resource type="Resource" id="Resource_by5hd"]
+script = ExtResource("2_1gskg")
+hit_points = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbbxb"]
+atlas = ExtResource("1_1qq8c")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u48yt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbbxb")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6c5v7"]
+radius = 31.0
+height = 112.0
+
+[sub_resource type="Resource" id="Resource_whlve"]
+script = ExtResource("3_38fgh")
+max_speed = 200.0
+direction = 1
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_yg86m")
+hitpoints = SubResource("Resource_by5hd")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_u48yt")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CapsuleShape2D_6c5v7")
+
+[node name="MovementNode" type="Node" parent="."]
+script = ExtResource("2_5ptpb")
+movement_data = SubResource("Resource_whlve")
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2, 2)
+rect = Rect2(-64, -64, 128, 128)
+script = ExtResource("5_4bykn")

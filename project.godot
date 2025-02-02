@@ -55,6 +55,11 @@ shoot={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+
 [rendering]
 
 renderer/rendering_method="mobile"

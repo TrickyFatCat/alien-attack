@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxs081h8dgpet"]
+[gd_scene load_steps=9 format=3 uid="uid://dxs081h8dgpet"]
 
 [ext_resource type="Texture2D" uid="uid://c05qh2nocg57r" path="res://assets/sprites/sprite_background.png" id="1_r0r0j"]
 [ext_resource type="PackedScene" uid="uid://brfnp5ke4vm1k" path="res://entities/player/player.tscn" id="2_jakpt"]
@@ -6,28 +6,26 @@
 [ext_resource type="Script" path="res://src/enemy_spawner/wave_spawn_data.gd" id="4_p33yh"]
 [ext_resource type="PackedScene" uid="uid://d2ambp1g8popp" path="res://entities/enemies/enemy_normal.tscn" id="5_fnkhh"]
 
-[sub_resource type="Resource" id="Resource_h1a8j"]
+[sub_resource type="Resource" id="Resource_7qe0o"]
 script = ExtResource("4_p33yh")
 enemy_scene = ExtResource("5_fnkhh")
 spawn_num = 1
 duration = 12.0
 spawn_delay = 3.0
 
-[sub_resource type="Resource" id="Resource_8ltjn"]
+[sub_resource type="Resource" id="Resource_air4a"]
 script = ExtResource("4_p33yh")
 enemy_scene = ExtResource("5_fnkhh")
 spawn_num = 1
 duration = 12.0
 spawn_delay = 2.0
 
-[sub_resource type="PackedScene" id="PackedScene_01xxw"]
-
-[sub_resource type="Resource" id="Resource_vrvp2"]
+[sub_resource type="Resource" id="Resource_4cibh"]
 script = ExtResource("4_p33yh")
-enemy_scene = SubResource("PackedScene_01xxw")
+enemy_scene = ExtResource("5_fnkhh")
 spawn_num = 2
 duration = 12.0
-spawn_delay = 4.0
+spawn_delay = 3.0
 
 [node name="MainLevel" type="Node2D"]
 
@@ -51,4 +49,4 @@ position = Vector2(360, 1100)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_deh8w")
-waves_data = Array[ExtResource("4_p33yh")]([SubResource("Resource_h1a8j"), SubResource("Resource_8ltjn"), SubResource("Resource_vrvp2")])
+waves_data = Array[ExtResource("4_p33yh")]([SubResource("Resource_7qe0o"), SubResource("Resource_air4a"), SubResource("Resource_4cibh")])

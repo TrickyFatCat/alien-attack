@@ -31,3 +31,29 @@ static func apply_damage(target: Node, damage: int) -> bool:
 
 	var hitpoints: HitPoints = get_hitpoints(target)
 	return hitpoints.decrease(damage)
+
+
+static func is_valid_index(index: int, array: Array) -> bool:
+	if array == null:
+		return false
+
+	return index >= 0 && index < array.size()
+
+
+static func create_timer(
+	node: Node,
+	callable: Callable,
+	duration: float = 1.0,
+	one_shot: bool = false,
+	auto_start: bool = false,
+) -> Timer:
+	if callable == null || node == null:
+		return null
+
+	var new_timer: Timer = Timer.new()
+	new_timer.wait_time = duration
+	new_timer.one_shot = one_shot
+	new_timer.autostart = auto_start
+	new_timer.timeout.connect(callable)
+	node.add_child(new_timer)
+	return new_timer

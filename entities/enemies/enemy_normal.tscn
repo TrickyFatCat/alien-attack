@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/off_screen_destroyer.gd" id="5_4bykn"]
 
 [sub_resource type="Resource" id="Resource_by5hd"]
+resource_local_to_scene = true
 script = ExtResource("2_1gskg")
 hit_points = 3
 

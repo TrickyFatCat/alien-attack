@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxs081h8dgpet"]
+[gd_scene load_steps=10 format=3 uid="uid://dxs081h8dgpet"]
 
 [ext_resource type="Texture2D" uid="uid://c05qh2nocg57r" path="res://assets/sprites/sprite_background.png" id="1_r0r0j"]
 [ext_resource type="PackedScene" uid="uid://brfnp5ke4vm1k" path="res://entities/player/player.tscn" id="2_jakpt"]
@@ -27,6 +27,13 @@ spawn_num = 2
 duration = 12.0
 spawn_delay = 3.0
 
+[sub_resource type="Resource" id="Resource_b2wnm"]
+script = ExtResource("4_p33yh")
+enemy_scene = ExtResource("5_fnkhh")
+spawn_num = 3
+duration = 12.0
+spawn_delay = 4.0
+
 [node name="MainLevel" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -49,4 +56,4 @@ position = Vector2(360, 1100)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("4_deh8w")
-waves_data = Array[ExtResource("4_p33yh")]([SubResource("Resource_7qe0o"), SubResource("Resource_air4a"), SubResource("Resource_4cibh")])
+waves_data = Array[ExtResource("4_p33yh")]([SubResource("Resource_7qe0o"), SubResource("Resource_air4a"), SubResource("Resource_4cibh"), SubResource("Resource_b2wnm")])

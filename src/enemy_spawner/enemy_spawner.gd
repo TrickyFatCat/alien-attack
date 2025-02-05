@@ -14,6 +14,9 @@ var _wave_index: int = 0
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+
 	_spawn_region_h.x = enemy_size.x
 	var viewport_size = get_viewport_rect().size
 	_spawn_region_h.y = viewport_size.x - _spawn_region_h.x * 2

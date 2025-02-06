@@ -12,6 +12,7 @@ func decrease(amount: int = 1) -> bool:
 		return false
 
 	hit_points -= amount
+	hit_points = max(0, hit_points)
 	on_hitpoints_decreased.emit(amount, hit_points)
 
 	if hit_points == 0:

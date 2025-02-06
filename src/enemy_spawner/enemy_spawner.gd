@@ -6,7 +6,7 @@ extends Node2D
 @export var waves_data: Array[WaveSpawnData]
 
 var _spawn_region_h: Vector2 = Vector2.ZERO
-var _spawn_region_v: float = -enemy_size.y
+var _spawn_region_v: Vector2 = Vector2.ZERO
 
 var _spawn_timer: Timer = null
 var _wave_timer: Timer = null
@@ -20,6 +20,9 @@ func _ready() -> void:
 	_spawn_region_h.x = enemy_size.x
 	var viewport_size = get_viewport_rect().size
 	_spawn_region_h.y = viewport_size.x - _spawn_region_h.x * 2
+
+	_spawn_region_v.x = -enemy_size.y
+	_spawn_region_v.y = -enemy_size.y * 2
 
 	_wave_timer = Utils.create_timer(self, _handle_wave_timer_finished, 1.0, true)
 	_spawn_timer = Utils.create_timer(self, _handle_spawn_timer_finished, 1.0)
@@ -62,7 +65,7 @@ func _spawn_enemy() -> void:
 	for i in range(spawn_num):
 		var spawn_position: Vector2 = Vector2.ZERO
 		spawn_position.x = randf_range(_spawn_region_h.x, _spawn_region_h.y)
-		spawn_position.y = _spawn_region_v
+		spawn_position.y = randf_range(_spawn_region_v.x, _spawn_region_v.y)
 
 		var new_enemy: Enemy = waves_data[_wave_index].enemy_scene.instantiate()
 		new_enemy.global_position = spawn_position

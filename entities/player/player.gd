@@ -22,6 +22,7 @@ func _ready() -> void:
 
 	if hitpoints != null:
 		Utils.register_hitpoints(self, hitpoints)
+		hitpoints.on_hitpoints_decreased.connect(_handle_hitpoints_decreased)
 
 
 func _process(_delta: float) -> void:
@@ -50,3 +51,7 @@ func _unhandled_key_input(_event: InputEvent) -> void:
 func _clamp_position() -> void:
 	position.x = clamp(position.x, _clamp_pos_h.x, _clamp_pos_h.y)
 	position.y = clamp(position.y, _clamp_pos_v.x, _clamp_pos_v.y)
+
+
+func _handle_hitpoints_decreased(amount: int, new_value: int) -> void:
+	print(new_value)

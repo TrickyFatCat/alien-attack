@@ -1,13 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://brfnp5ke4vm1k"]
+[gd_scene load_steps=20 format=3 uid="uid://brfnp5ke4vm1k"]
 
 [ext_resource type="SpriteFrames" uid="uid://blvyfre6d4a68" path="res://assets/animations/animation_player.tres" id="1_sqmr0"]
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_ykhfs"]
+[ext_resource type="Script" path="res://src/hitpoints.gd" id="2_8qn6b"]
 [ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="2_aoths"]
 [ext_resource type="Script" path="res://src/player_animation_controller.gd" id="3_3nift"]
 [ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="3_gukxv"]
 [ext_resource type="Texture2D" uid="uid://c0v6urt3mm4da" path="res://assets/sprites/sprites_exhaust.png" id="4_cwn07"]
 [ext_resource type="Script" path="res://src/weapon/weapon.gd" id="7_a3u28"]
 [ext_resource type="PackedScene" uid="uid://uo02en2275hb" path="res://entities/projectiles/projectile_player.tscn" id="8_6f17y"]
+
+[sub_resource type="Resource" id="Resource_kep8n"]
+script = ExtResource("2_8qn6b")
+hit_points = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jknea"]
 atlas = ExtResource("4_cwn07")
@@ -71,6 +76,7 @@ direction = 2
 [node name="Player" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_ykhfs")
+hitpoints = SubResource("Resource_kep8n")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

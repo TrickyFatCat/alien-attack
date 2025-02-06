@@ -17,7 +17,6 @@ max_speed = 800.0
 direction = 0
 
 [node name="PlayerPorjectile" instance=ExtResource("1_8gqrk")]
-collision_mask = 2
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_ie63v")

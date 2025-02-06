@@ -20,6 +20,7 @@ direction = 2
 [node name="Projectile" type="Area2D"]
 process_mode = 1
 z_index = -1
+collision_mask = 2
 script = ExtResource("1_b6wtw")
 
 [node name="Sprite" type="Sprite2D" parent="."]

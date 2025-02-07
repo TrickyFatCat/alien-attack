@@ -74,6 +74,8 @@ max_speed = 500.0
 direction = 2
 
 [node name="Player" type="Area2D"]
+process_mode = 1
+z_index = 1
 collision_mask = 2
 script = ExtResource("1_ykhfs")
 hitpoints = SubResource("Resource_kep8n")

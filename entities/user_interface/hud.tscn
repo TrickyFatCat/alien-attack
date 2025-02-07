@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://u0csrni8u7ff"]
+
+[ext_resource type="Script" path="res://entities/user_interface/hud.gd" id="1_5i2u5"]
+[ext_resource type="FontFile" uid="uid://bk3u54dcvw6y6" path="res://assets/Audiowide-Regular.ttf" id="1_ljx2p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_una1m"]
+font = ExtResource("1_ljx2p")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_5i2u5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 297.0
+offset_bottom = 58.0
+mouse_filter = 2
+
+[node name="Text_Name" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Score:"
+label_settings = SubResource("LabelSettings_una1m")
+vertical_alignment = 1
+uppercase = true
+
+[node name="Text_Score" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "999999"
+label_settings = SubResource("LabelSettings_una1m")
+vertical_alignment = 1
+uppercase = true

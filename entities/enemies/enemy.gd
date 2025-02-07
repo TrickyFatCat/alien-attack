@@ -1,8 +1,11 @@
 class_name Enemy
 extends Area2D
 
+signal on_enemy_died(score: int)
+
 const EXPLOSION_ANIM: String = "explosion"
 
+@export var score: int = 10
 @export var hitpoints: HitPoints = null
 
 @onready var movement_node: MovementNode = %MovementNode
@@ -19,6 +22,7 @@ func _ready() -> void:
 
 
 func _handle_hitpoints_reached_zero() -> void:
+	on_enemy_died.emit(score)
 	_explode()
 
 

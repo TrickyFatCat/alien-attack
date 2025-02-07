@@ -22,6 +22,7 @@ max_speed = 200.0
 direction = 1
 
 [node name="Enemy" type="Area2D"]
+process_mode = 1
 collision_layer = 2
 script = ExtResource("1_yg86m")
 hitpoints = SubResource("Resource_by5hd")

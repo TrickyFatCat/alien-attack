@@ -2,6 +2,8 @@
 class_name EnemySpawner
 extends Node2D
 
+signal on_enemy_spawned(enemy: Enemy)
+
 @export var enemy_size: Vector2 = Vector2(128, 128)
 @export var waves_data: Array[WaveSpawnData]
 
@@ -28,8 +30,8 @@ func _ready() -> void:
 	_spawn_timer = Utils.create_timer(self, _handle_spawn_timer_finished, 1.0)
 
 	if !waves_data.is_empty():
-		_spawn_enemy()
-		_start_spawn()
+		_spawn_enemy.call_deferred()
+		_start_spawn.call_deferred()
 
 
 func _process(_delta: float) -> void:
@@ -70,6 +72,7 @@ func _spawn_enemy() -> void:
 		var new_enemy: Enemy = waves_data[_wave_index].enemy_scene.instantiate()
 		new_enemy.global_position = spawn_position
 		add_child(new_enemy)
+		on_enemy_spawned.emit(new_enemy)
 
 
 func _draw() -> void:

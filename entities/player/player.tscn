@@ -82,18 +82,21 @@ hitpoints = SubResource("Resource_kep8n")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+process_mode = 1
 sprite_frames = ExtResource("1_sqmr0")
-animation = &"idle"
+animation = &"stop"
 autoplay = "idle"
 script = ExtResource("3_3nift")
 
 [node name="Exhaust" type="AnimatedSprite2D" parent="Body"]
+process_mode = 1
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_b7ixb")
 autoplay = "default"
 offset = Vector2(0, 78)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("CapsuleShape2D_felh0")
 
 [node name="MovementNode" type="Node" parent="."]

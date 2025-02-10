@@ -49,5 +49,6 @@ func _explode() -> void:
 		queue_free.call_deferred()
 		return
 
+	z_index += 2
 	sprite.animation_finished.connect(_handle_animation_finished)
 	sprite.play(EXPLOSION_ANIM)

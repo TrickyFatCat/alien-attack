@@ -39,6 +39,11 @@ func _process(_delta: float) -> void:
 		queue_redraw()
 
 
+func stop_spawn() -> void:
+	_spawn_timer.stop()
+	_wave_timer.stop()
+
+
 func _handle_spawn_timer_finished() -> void:
 	_spawn_enemy()
 

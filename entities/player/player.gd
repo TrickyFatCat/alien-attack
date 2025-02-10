@@ -22,7 +22,7 @@ func _ready() -> void:
 
 	if hitpoints != null:
 		Utils.register_hitpoints(self, hitpoints)
-		hitpoints.on_hitpoints_decreased.connect(_handle_hitpoints_decreased)
+		hitpoints.on_hitpoints_reached_zero.connect(_handle_zero_hitpoints)
 
 
 func _process(_delta: float) -> void:
@@ -53,5 +53,11 @@ func _clamp_position() -> void:
 	position.y = clamp(position.y, _clamp_pos_v.x, _clamp_pos_v.y)
 
 
-func _handle_hitpoints_decreased(amount: int, new_value: int) -> void:
-	print(new_value)
+func _handle_zero_hitpoints() -> void:
+	process_mode = PROCESS_MODE_DISABLED
+	animation_controller.play_idle_animation()
+
+	var collision := %Collision
+
+	if collision != null:
+		collision.disabled = true

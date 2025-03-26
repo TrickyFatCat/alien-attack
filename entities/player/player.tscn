@@ -1,14 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://brfnp5ke4vm1k"]
+[gd_scene load_steps=21 format=3 uid="uid://brfnp5ke4vm1k"]
 
 [ext_resource type="SpriteFrames" uid="uid://blvyfre6d4a68" path="res://assets/animations/animation_player.tres" id="1_sqmr0"]
-[ext_resource type="Script" path="res://entities/player/player.gd" id="1_ykhfs"]
-[ext_resource type="Script" path="res://src/hitpoints.gd" id="2_8qn6b"]
-[ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="2_aoths"]
-[ext_resource type="Script" path="res://src/player_animation_controller.gd" id="3_3nift"]
-[ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="3_gukxv"]
+[ext_resource type="Script" uid="uid://dbh7spccppwtn" path="res://entities/player/player.gd" id="1_ykhfs"]
+[ext_resource type="Script" uid="uid://b5ic1hqi5n1yb" path="res://src/hitpoints.gd" id="2_8qn6b"]
+[ext_resource type="Script" uid="uid://bfgsijmwl6pqq" path="res://src/movement_node/movement_node.gd" id="2_aoths"]
+[ext_resource type="Script" uid="uid://33cl2mv5k75t" path="res://src/player_animation_controller.gd" id="3_3nift"]
+[ext_resource type="Script" uid="uid://6oq5wvyfg3it" path="res://src/movement_node/movement_data.gd" id="3_gukxv"]
 [ext_resource type="Texture2D" uid="uid://c0v6urt3mm4da" path="res://assets/sprites/sprites_exhaust.png" id="4_cwn07"]
-[ext_resource type="Script" path="res://src/weapon/weapon.gd" id="7_a3u28"]
+[ext_resource type="Script" uid="uid://pyua8ppux36x" path="res://src/weapon/weapon.gd" id="7_a3u28"]
 [ext_resource type="PackedScene" uid="uid://uo02en2275hb" path="res://entities/projectiles/projectile_player.tscn" id="8_6f17y"]
+[ext_resource type="AudioStream" uid="uid://u2e1kgade3tr" path="res://assets/sounds/snd_shot.ogg" id="10_h2eww"]
 
 [sub_resource type="Resource" id="Resource_kep8n"]
 script = ExtResource("2_8qn6b")
@@ -110,3 +111,8 @@ process_mode = 4
 position = Vector2(0, -68)
 script = ExtResource("7_a3u28")
 projectile_scene = ExtResource("8_6f17y")
+
+[node name="Audio_Shot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_h2eww")
+volume_db = -10.0

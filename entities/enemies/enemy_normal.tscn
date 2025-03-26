@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2ambp1g8popp"]
+[gd_scene load_steps=11 format=3 uid="uid://d2ambp1g8popp"]
 
-[ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_yg86m"]
-[ext_resource type="Script" path="res://src/hitpoints.gd" id="2_1gskg"]
-[ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="2_5ptpb"]
+[ext_resource type="Script" uid="uid://bcb83tr05rfyy" path="res://entities/enemies/enemy.gd" id="1_yg86m"]
+[ext_resource type="Script" uid="uid://b5ic1hqi5n1yb" path="res://src/hitpoints.gd" id="2_1gskg"]
+[ext_resource type="Script" uid="uid://bfgsijmwl6pqq" path="res://src/movement_node/movement_node.gd" id="2_5ptpb"]
 [ext_resource type="SpriteFrames" uid="uid://drq714hjuj4dp" path="res://assets/animations/animation_enemy_normal.tres" id="3_05tjc"]
-[ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="3_38fgh"]
-[ext_resource type="Script" path="res://src/off_screen_destroyer.gd" id="5_4bykn"]
+[ext_resource type="Script" uid="uid://6oq5wvyfg3it" path="res://src/movement_node/movement_data.gd" id="3_38fgh"]
+[ext_resource type="Script" uid="uid://bq04vu28e8uy0" path="res://src/off_screen_destroyer.gd" id="5_4bykn"]
+[ext_resource type="AudioStream" uid="uid://bqsggmukn08lu" path="res://assets/sounds/snd_explosion.ogg" id="7_gb1j5"]
 
 [sub_resource type="Resource" id="Resource_by5hd"]
 resource_local_to_scene = true
@@ -46,3 +47,7 @@ movement_data = SubResource("Resource_whlve")
 position = Vector2(2, 2)
 rect = Rect2(-64, -64, 128, 128)
 script = ExtResource("5_4bykn")
+
+[node name="Audio_Explosion" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_gb1j5")

@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://dxs081h8dgpet"]
 
-[ext_resource type="Script" path="res://src/game.gd" id="1_7vc7h"]
+[ext_resource type="Script" uid="uid://dm8ia11i1et6g" path="res://src/game.gd" id="1_7vc7h"]
 [ext_resource type="Texture2D" uid="uid://c05qh2nocg57r" path="res://assets/sprites/sprite_background.png" id="1_r0r0j"]
 [ext_resource type="PackedScene" uid="uid://brfnp5ke4vm1k" path="res://entities/player/player.tscn" id="2_jakpt"]
 [ext_resource type="PackedScene" uid="uid://u0csrni8u7ff" path="res://entities/user_interface/hud.tscn" id="2_uqlff"]
-[ext_resource type="Script" path="res://src/enemy_spawner/enemy_spawner.gd" id="4_deh8w"]
-[ext_resource type="Script" path="res://src/enemy_spawner/wave_spawn_data.gd" id="4_p33yh"]
+[ext_resource type="Script" uid="uid://7uegxpfiljpx" path="res://src/enemy_spawner/enemy_spawner.gd" id="4_deh8w"]
+[ext_resource type="Script" uid="uid://chdoh4upluavn" path="res://src/enemy_spawner/wave_spawn_data.gd" id="4_p33yh"]
 [ext_resource type="PackedScene" uid="uid://d2ambp1g8popp" path="res://entities/enemies/enemy_normal.tscn" id="5_fnkhh"]
-[ext_resource type="Script" path="res://src/score_counter.gd" id="6_sderx"]
+[ext_resource type="Script" uid="uid://dpxddbskk42uf" path="res://src/score_counter.gd" id="6_sderx"]
 
 [sub_resource type="Resource" id="Resource_7qe0o"]
 script = ExtResource("4_p33yh")

@@ -52,3 +52,8 @@ func _explode() -> void:
 	z_index += 2
 	sprite.animation_finished.connect(_handle_animation_finished)
 	sprite.play(EXPLOSION_ANIM)
+
+	var audio_explosion: AudioStreamPlayer2D = %Audio_Explosion
+
+	if audio_explosion != null:
+		audio_explosion.play()

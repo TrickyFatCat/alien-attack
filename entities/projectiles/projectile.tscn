@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtarjg1jqn5eu"]
 
-[ext_resource type="Script" path="res://entities/projectiles/projectile.gd" id="1_b6wtw"]
-[ext_resource type="Script" path="res://src/movement_node/movement_node.gd" id="1_toynq"]
+[ext_resource type="Script" uid="uid://cqhojdckns2g2" path="res://entities/projectiles/projectile.gd" id="1_b6wtw"]
+[ext_resource type="Script" uid="uid://bfgsijmwl6pqq" path="res://src/movement_node/movement_node.gd" id="1_toynq"]
 [ext_resource type="Texture2D" uid="uid://bg8lg4unesnra" path="res://assets/sprites/atlas_projectiles.tres" id="2_0fia6"]
-[ext_resource type="Script" path="res://src/movement_node/movement_data.gd" id="4_fbjy6"]
-[ext_resource type="Script" path="res://src/off_screen_destroyer.gd" id="5_k2q1e"]
+[ext_resource type="Script" uid="uid://6oq5wvyfg3it" path="res://src/movement_node/movement_data.gd" id="4_fbjy6"]
+[ext_resource type="Script" uid="uid://bq04vu28e8uy0" path="res://src/off_screen_destroyer.gd" id="5_k2q1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w1r3"]
 atlas = ExtResource("2_0fia6")
